@@ -1,5 +1,8 @@
 package Model;
 
+/**
+ * StudentCourseRecord
+ */
 public class StudentCourseRecord {
     private int studentId;
     private String courseCode;
