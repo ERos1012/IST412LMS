@@ -1,6 +1,7 @@
 package View;
 
 import javax.swing.*;
+
 import Controller.QuizController;
 import Model.Quiz;
 
