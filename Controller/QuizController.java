@@ -41,7 +41,7 @@ public class QuizController {
      * @return
      */
     public List<String> getAllQuizzes(int courseId){
-
+        return null;
     }
 
     /**

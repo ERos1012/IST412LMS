@@ -46,6 +46,6 @@ public class AssignmentController {
      * @return
      */
     public List<String> getAllAssignments(int courseId){
-
+        return null;
     }
 }

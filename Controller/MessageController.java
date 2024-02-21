@@ -36,7 +36,7 @@ public class MessageController {
      */
     public List<String> getStudentMessages(int studentId)
     {
-
+        return null;
     }
 
     /**
@@ -46,6 +46,6 @@ public class MessageController {
      */
     public List<String> getTeacherMessages (int teacherID)
     {
-
+        return null;
     }
 }
