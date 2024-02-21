@@ -44,5 +44,15 @@ public class QuizController {
 
     }
 
+    /**
+     * Assigns a grade to a quiz for a student.
+     * @param studentId
+     * @param courseId
+     * @param quizId
+     * @param grade
+     */
+    public void gradeQuiz(int studentId, int courseId, int quizId, int grade)
+    {
 
+    }
 }
