@@ -76,6 +76,7 @@ public class CourseController {
      * @return
      */
     public List<String> getAllCourses(){
+        return null;
     }
 
     /**
@@ -84,6 +85,6 @@ public class CourseController {
      * @return
      */
     public String getCourseByID(int id){
-
+        return null;
     }
 }

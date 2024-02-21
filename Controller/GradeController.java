@@ -44,7 +44,7 @@ public class GradeController {
      */
     public int viewQuizGrade(int studentId, int courseID, int quizId)
     {
-
+        return 0;
     }
 
     /**
@@ -55,6 +55,7 @@ public class GradeController {
      */
     public List<Integer> viewCourseGrades(int studentId, int CourseID)
     {
+        return null;
     }
 
 }
