@@ -2,6 +2,8 @@ package Controller;
 
 import Model.Quiz;
 
+import java.util.List;
+
 /**
  * The QuizController class manages quizzes in the system.
  */
@@ -32,4 +34,15 @@ public class QuizController {
         // demo
         return new Quiz(1, 123, 90);
     }
+
+    /**
+     * Gets a list of all quizzes for a course
+     * @param courseId
+     * @return
+     */
+    public List<String> getAllQuizzes(int courseId){
+
+    }
+
+
 }

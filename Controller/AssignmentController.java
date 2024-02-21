@@ -1,6 +1,8 @@
 package Controller;
 import Model.Assignment;
 
+import java.util.List;
+
 /**
  * The AssignmentController class manages assignments in the system.
  */
@@ -36,5 +38,14 @@ public class AssignmentController {
      * Submits an assignment.
      */
     public void submitAssignment() {
+    }
+
+    /**
+     * Gets a list of all assignments for a course
+     * @param courseId
+     * @return
+     */
+    public List<String> getAllAssignments(int courseId){
+
     }
 }

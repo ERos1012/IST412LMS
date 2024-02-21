@@ -2,6 +2,8 @@ package Controller;
 
 import Model.Course;
 
+import java.util.List;
+
 /**
  * The CourseController class manages courses in the system.
  */
@@ -67,5 +69,21 @@ public class CourseController {
      * Views grades for a specific course.
      */
     public void viewCourseGrades() {
+    }
+
+    /**
+     * Gets a list of all courses
+     * @return
+     */
+    public List<String> getAllCourses(){
+    }
+
+    /**
+     * Gets a course's name by ID
+     * @param id
+     * @return
+     */
+    public String getCourseByID(int id){
+
     }
 }
