@@ -1,6 +1,7 @@
 package View;
 
 import javax.swing.*;
+
 import Controller.CourseController;
 import Model.Course;
 

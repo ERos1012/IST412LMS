@@ -12,6 +12,10 @@ public class Assignment {
         this.dueDate = dueDate;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getName() {
         return name;
     }
