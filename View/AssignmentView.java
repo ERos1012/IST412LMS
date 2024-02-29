@@ -17,7 +17,7 @@ public class AssignmentView extends JFrame {
     /**
      * Constructs a new AssignmentView object.
      */
-    public AssignmentView() {
+    public AssignmentView(Assignment assignment) {
         super("Assignment Details");
 
         // Initialize the AssignmentController
@@ -45,14 +45,14 @@ public class AssignmentView extends JFrame {
         setVisible(true);
 
         // Retrieve assignment details from the controller and update labels
-        updateAssignmentDetails();
+        updateAssignmentDetails(assignment);
     }
 
     /**
      * Updates the labels with assignment details.
      */
-    private void updateAssignmentDetails() {
-        Assignment assignment = assignmentController.viewAssignment();
+    private void updateAssignmentDetails(Assignment assignment) {
+        Assignment updatedAssignment = assignmentController.viewAssignment(assignment);
         nameLabel.setText("Name: " + assignment.getName());
         descriptionLabel.setText("Description: " + assignment.getDescription());
         dueDateLabel.setText("Due Date: " + assignment.getDueDate());

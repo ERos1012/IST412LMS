@@ -18,7 +18,7 @@ public class GradeView extends JFrame {
     /**
      * Constructs a new GradeView object.
      */
-    public GradeView() {
+    public GradeView(Grade grade) {
         super("Grade Details");
 
         // Initialize the GradeController
@@ -48,14 +48,14 @@ public class GradeView extends JFrame {
         setVisible(true);
 
         // Retrieve grade details from the controller and update labels
-        updateGradeDetails();
+        updateGradeDetails(grade);
     }
 
     /**
      * Updates the labels with grade details.
      */
-    private void updateGradeDetails() {
-        Grade grade = gradeController.viewGrade(); // Assuming this method retrieves grade details from the controller
+    private void updateGradeDetails(Grade grade) {
+        Grade updateGrade = gradeController.viewGrade(grade); // Assuming this method retrieves grade details from the controller
         idLabel.setText("ID: " + grade.getId());
         studentIdLabel.setText("Student ID: " + grade.getStudentId());
         courseIdLabel.setText("Course ID: " + grade.getCourseId());
