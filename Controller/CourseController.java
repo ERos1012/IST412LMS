@@ -12,63 +12,79 @@ public class CourseController {
     /**
      * Adds a new course to the system.
      */
-    public void addCourse(Course course) {
+    public void addCourse() {
     }
 
     /**
      * Removes an existing course from the system.
      */
-    public void removeCourse(Course course) {
+    public void removeCourse() {
     }
 
     /**
      * Updates an existing course in the system.
      */
-    public void updateCourse(Course course) {
+    public void updateCourse() {
     }
 
     /**
      * Views details of a specific course.
      */
-    public Course viewCourse(Course course) {
+    public Course viewCourse() {
         //demo
-        return course;
+        return new Course("Course 1", 1, "Program", "email@example.com");
     }
 
     /**
      * Views a list of all courses in the system.
      */
-    public void viewCourseList(Course course) {
+    public void viewCourseList() {
     }
 
     /**
      * Views students enrolled in a specific course.
      */
-    public void viewCourseStudents(Course course) {
+    public void viewCourseStudents() {
     }
 
     /**
      * Views instructors assigned to a specific course.
      */
-    public void viewCourseInstructors(Course course) {
+    public void viewCourseInstructors() {
     }
 
     /**
      * Views assignments associated with a specific course.
      */
-    public void viewCourseAssignments(Course course) {
+    public void viewCourseAssignments() {
     }
 
     /**
      * Views quizzes associated with a specific course.
      */
-    public void viewCourseQuizzes(Course course) {
+    public void viewCourseQuizzes() {
     }
 
     /**
      * Views grades for a specific course.
      */
-    public void viewCourseGrades(Course course) {
+    public void viewCourseGrades() {
     }
 
+    /**
+     * Gets a list of all courses
+     * @return
+     */
+    public List<String> getAllCourses(){
+        return null;
+    }
+
+    /**
+     * Gets a course's name by ID
+     * @param id
+     * @return
+     */
+    public String getCourseByID(int id){
+        return null;
+    }
 }

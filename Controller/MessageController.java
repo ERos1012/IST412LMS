@@ -1,8 +1,6 @@
 package Controller;
 
 import Model.Message;
-import Model.Student;
-import Model.Teacher;
 
 import java.util.List;
 
@@ -14,41 +12,40 @@ public class MessageController {
     /**
      * Sends a message.
      */
-    public void sendMessage(Message message) {
+    public void sendMessage() {
     }
 
     /**
      * Views a message.
      */
-    public String viewMessage(Message message) {
+    public Message viewMessage() {
         // demo
-        String theMessage = message.getMessage();
-        return theMessage;
+        return new Message(1, 123, 456, "Hello!", "2024-02-20");
     }
 
     /**
      * Deletes a message.
      */
-    public void deleteMessage(Message message) {
+    public void deleteMessage() {
     }
 
     /**
      * Gets all of a student's messages
-     * @param student
+     * @param studentId
      * @return
      */
-    public List<String> getStudentMessages(Student student)
+    public List<String> getStudentMessages(int studentId)
     {
-        return List.of();
+        return null;
     }
 
     /**
      * gets all of a teacher's messages
-     * @param teacher
+     * @param teacherID
      * @return
      */
-    public List<String> getTeacherMessages (Teacher teacher)
+    public List<String> getTeacherMessages (int teacherID)
     {
-        return List.of();
+        return null;
     }
 }

@@ -1,6 +1,5 @@
 package Controller;
 
-import Model.Course;
 import Model.Quiz;
 
 import java.util.List;
@@ -13,36 +12,36 @@ public class QuizController {
     /**
      * Adds a new quiz to the system.
      */
-    public void addQuiz(Quiz quiz) {
+    public void addQuiz() {
     }
 
     /**
      * Removes an existing quiz from the system.
      */
-    public void removeQuiz(Quiz quiz) {
+    public void removeQuiz() {
     }
 
     /**
      * Updates an existing quiz in the system.
      */
-    public void updateQuiz(Quiz quiz) {
+    public void updateQuiz() {
     }
 
     /**
      * Views details of a specific quiz.
      */
-    public Quiz viewQuiz(Quiz quiz) {
+    public Quiz viewQuiz() {
         // demo
-        return quiz;
+        return new Quiz(1, 123, 90);
     }
 
     /**
      * Gets a list of all quizzes for a course
-     * @param course
+     * @param courseId
      * @return
      */
-    public List<Quiz> getAllQuizzes(Course course){
-        return List.of();
+    public List<String> getAllQuizzes(int courseId){
+        return null;
     }
 
     /**

@@ -2,7 +2,6 @@ package Controller;
 
 import Model.Grade;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,36 +11,32 @@ public class GradeController {
 
     /**
      * Adds a new grade to the system.
-     * @param grade
      */
-    public void addGrade(Grade grade) {
+    public void addGrade() {
     }
 
     /**
      * Removes an existing grade from the system.
-     * @param grade
      */
-    public void removeGrade(Grade grade) {
+    public void removeGrade() {
     }
 
     /**
      * Updates an existing grade in the system.
-     * @param grade
-     * @param newGradeValue
      */
-    public void updateGrade(Grade grade, double newGradeValue) {
+    public void updateGrade() {
     }
 
     /**
      * Views details of a specific grade.
      */
-    public Grade viewGrade(Grade grade) {
+    public Grade viewGrade() {
         // demo
-       return grade;
+        return new Grade(1, 123, 456, 90);
     }
 
     /**
-     * View a specific quiz grade for a particular student
+     * View a specific quiz grade
      * @param studentId
      * @param courseID
      * @param quizId
@@ -49,27 +44,18 @@ public class GradeController {
      */
     public int viewQuizGrade(int studentId, int courseID, int quizId)
     {
-        // Code to get quiz grade from the system
-        // Demo grade value
-        int grade = 85;
-        return grade;
+        return 0;
     }
 
     /**
-     * view all grades for a course for a particular student
+     * view all grades for a course
      * @param studentId
      * @param CourseID
      * @return
      */
     public List<Integer> viewCourseGrades(int studentId, int CourseID)
     {
-        // Code to get all grades for the specified course from the system
-        List<Integer> grades = new ArrayList<>();
-        // Demo grade values
-        grades.add(80);
-        grades.add(75);
-        grades.add(90);
-        return grades;
+        return null;
     }
 
 }

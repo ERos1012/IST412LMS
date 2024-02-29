@@ -11,27 +11,27 @@ public class AssignmentController {
     /**
      * Adds a new assignment to the system.
      */
-    public void addAssignment(Assignment assignment) {
+    public void addAssignment() {
     }
 
     /**
      * Removes an existing assignment from the system.
      */
-    public void removeAssignment(Assignment assignment) {
+    public void removeAssignment() {
     }
 
     /**
      * Updates an existing assignment in the system.
      */
-    public void updateAssignment(Assignment assignment) {
+    public void updateAssignment() {
     }
 
     /**
      * Views details of an assignment in the system.
      */
-    public Assignment viewAssignment(Assignment assignment) {
+    public Assignment viewAssignment() {
         //demo
-        return assignment;
+        return new Assignment("Assignment 1", "Description", "2024-02-20");
     }
 
     /**
@@ -46,6 +46,6 @@ public class AssignmentController {
      * @return
      */
     public List<String> getAllAssignments(int courseId){
-        return List.of();
+        return null;
     }
 }
