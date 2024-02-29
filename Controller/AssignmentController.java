@@ -1,5 +1,6 @@
 package Controller;
 import Model.Assignment;
+import Model.Course;
 
 import java.util.List;
 
@@ -29,9 +30,9 @@ public class AssignmentController {
     /**
      * Views details of an assignment in the system.
      */
-    public Assignment viewAssignment() {
+    public Assignment viewAssignment(Assignment assignment) {
         //demo
-        return new Assignment("Assignment 1", "Description", "2024-02-20");
+        return assignment;
     }
 
     /**
@@ -42,10 +43,10 @@ public class AssignmentController {
 
     /**
      * Gets a list of all assignments for a course
-     * @param courseId
+     * @param course
      * @return
      */
-    public List<String> getAllAssignments(int courseId){
-        return null;
+    public List<String> getAllAssignments(Course course){
+        return List.of();
     }
 }
