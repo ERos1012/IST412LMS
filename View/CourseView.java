@@ -55,7 +55,8 @@ public class CourseView extends JFrame {
      * Updates the labels with course details.
      */
     private void updateCourseDetails() {
-        Course course = courseController.viewCourse(); // Assuming this method retrieves course details from the controller
+        Course course = null;
+        course = courseController.viewCourse(course); // Assuming this method retrieves course details from the controller
         nameLabel.setText("Name: " + course.getName());
         idLabel.setText("ID: " + course.getId());
         programLabel.setText("Program: " + course.getProgram());

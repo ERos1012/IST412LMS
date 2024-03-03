@@ -68,6 +68,6 @@ public class GradeView extends JFrame {
      * @param args the command-line arguments
      */
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(GradeView::new);
+        SwingUtilities.invokeLater(() -> new GradeView(null));
     }
 }

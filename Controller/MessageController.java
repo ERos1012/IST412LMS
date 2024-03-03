@@ -20,11 +20,10 @@ public class MessageController {
     /**
      * Views a message.
      */
-    public String viewMessage(Message message) {
-        // demo
-        String theMessage = message.getMessage();
-        return theMessage;
+    public Message viewMessage(Message message) {
+        return message; 
     }
+    
 
     /**
      * Deletes a message.

@@ -12,19 +12,25 @@ public class AssignmentController {
     /**
      * Adds a new assignment to the system.
      */
-    public void addAssignment() {
+    public Assignment addAssignment(Assignment assignment) {
+        //demo
+        System.out.println("ASSIGNMENT ADDED -- Assignment Name: " + assignment.getName() + " -- Description: " + 
+        assignment.getDescription() + " -- Due Date: " + assignment.getDueDate());
+        return assignment;
     }
 
     /**
      * Removes an existing assignment from the system.
      */
     public void removeAssignment() {
+        System.out.println("Assignment removed");
     }
 
     /**
      * Updates an existing assignment in the system.
      */
     public void updateAssignment() {
+        System.out.println("Assignment updated");
     }
 
     /**
@@ -32,6 +38,8 @@ public class AssignmentController {
      */
     public Assignment viewAssignment(Assignment assignment) {
         //demo
+        System.out.println("VIEWING ASSIGNMENT -- Assignment Name: " + assignment.getName() + " -- Description: " + 
+        assignment.getDescription() + " -- Due Date: " + assignment.getDueDate());
         return assignment;
     }
 
@@ -39,6 +47,7 @@ public class AssignmentController {
      * Submits an assignment.
      */
     public void submitAssignment() {
+        System.out.println("Assignment submitted");
     }
 
     /**

@@ -1,8 +1,5 @@
 package Controller;
-
 import Model.Course;
-
-import java.util.List;
 
 /**
  * The CourseController class manages courses in the system.

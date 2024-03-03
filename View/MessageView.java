@@ -58,13 +58,16 @@ public class MessageView extends JFrame {
      * Updates the labels with message details.
      */
     private void updateMessageDetails() {
-        Message message = messageController.viewMessage(); // Assuming this method retrieves message details from the controller
-        idLabel.setText("ID: " + message.getId());
-        senderIdLabel.setText("Sender ID: " + message.getSenderId());
-        receiverIdLabel.setText("Receiver ID: " + message.getReceiverId());
-        messageLabel.setText("Message: " + message.getMessage());
-        dateLabel.setText("Date: " + message.getDate());
+        Message message = messageController.viewMessage(new Message()); // Pass a Message object
+        if (message != null) {
+            idLabel.setText("ID: " + message.getId());
+            senderIdLabel.setText("Sender ID: " + message.getSenderId());
+            receiverIdLabel.setText("Receiver ID: " + message.getReceiverId());
+            messageLabel.setText("Message: " + message.getMessage());
+            dateLabel.setText("Date: " + message.getDate());
+        }
     }
+    
 
     /**
      * The main method to launch the MessageView.
