@@ -1,4 +1,7 @@
 package Controller;
+
+import java.util.List;
+
 import Model.Course;
 
 /**
@@ -6,29 +9,36 @@ import Model.Course;
  */
 public class CourseController {
 
+    // Dummy list of courses
+    private List<Course> courses = Course.getDummyCourses();
+
     /**
      * Adds a new course to the system.
      */
     public void addCourse(Course course) {
+        System.out.println("Course added: " + course.getName() + " " + course.getId() + " " + course.getProgram() + " " + course.getInstructor());
     }
 
     /**
      * Removes an existing course from the system.
      */
-    public void removeCourse(Course course) {
+    public void removeCourse(int id) {
+        System.out.println("Course removed: " + id);
     }
 
     /**
      * Updates an existing course in the system.
      */
     public void updateCourse(Course course) {
+        System.out.println("Course updated: " + course.getName() + " " + course.getId() + " " + course.getProgram() + " " + course.getInstructor());
     }
 
     /**
      * Views details of a specific course.
      */
     public Course viewCourse(Course course) {
-        //demo
+        // demo
+        System.out.println("Course details: " + course.getName() + " " + course.getId() + " " + course.getProgram() + " " + course.getInstructor());
         return course;
     }
 
@@ -68,4 +78,12 @@ public class CourseController {
     public void viewCourseGrades(Course course) {
     }
 
+    /**
+     * Returns a list of all courses.
+     * 
+     * @return List of all courses.
+     */
+    public List<Course> getAllCourses() {
+        return courses;
+    }
 }
