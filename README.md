@@ -32,11 +32,6 @@ This test harness is designed to test the functionalities of the AssignmentContr
 
 - For each test case, the console output will indicate whether the test passed or failed.
 
-## Notes
-
-- Make sure to have the necessary Java dependencies installed.
-- Update the Java classpaths if necessary.
-
 ## Members
 
 1. Eric Rosario
