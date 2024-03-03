@@ -13,7 +13,7 @@ import Model.Course;
  * The CourseView class represents a graphical user interface for displaying course details.
  */
 public class CourseView extends JFrame {
-    private JTextArea courseTextArea;
+    private JTextArea courseTextArea = new JTextArea();
     private JButton addButton;
     private JButton removeButton;
     private JButton updateButton;

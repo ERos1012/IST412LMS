@@ -1,3 +1,9 @@
+package FinalTestHarness;
+import Controller.AssignmentController;
+import Controller.CourseController;
+import Model.Assignment;
+import Model.Course;
+
 /*should consist of a) controller components passing control between themselves as envisioned in your design, and
 b) controller components calling the APIs of their view and model components, again as envisioned in your design.
 
@@ -8,7 +14,10 @@ controller, view, and model classes and exercise their APIs. You may want to inc
 method stubs to reduce coupling between the testharness module and your other modules.
 */
 
-public class Main
-{
-
+public class Main {
+    public static void main(String[] args) {
+        // Instantiate controller classes
+        CourseController courseController = new CourseController();
+        AssignmentController assignmentController = new AssignmentController();
+    }
 }
