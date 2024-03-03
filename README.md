@@ -1,39 +1,41 @@
 # IST412 - Group 4: Learning Management System
 
-# Usage
-1. Test Scenarios
-    * The Test Harness will execute the following scenarios:
-        * CourseController
-            * Adding a new course.
-            * Updating an existing course.
-            * Removing a course.
-        * AssignmentController
-            * Adding a new assignment.
-            * Updating an existing assignment.
-            * Removing an assignment.
-2. Input Values
-    * Here are the input values used for testing:
-        * CourseController
-            * Adding a new course:
-                * Course Name: "Math"
-                * Course ID: 101
-                * Program: "Engineering"
-                * Instructor: "Dr. Smith"
-            * Updating an existing course:
-                * Updated Course Name: "Physics"
-                * Updated Program: "Science"
-                * Updated Instructor: "Prof. Johnson"
-            * Removing a course:
-                * Course ID to remove: 101
-        * AssignmentController
-            * Adding a new assignment:
-                * Assignment Name: "Assignment 1"
-                * Description: "Description 1"
-                * Due Date: "2024-03-10"
-            * Updating an existing assignment:
-                * Updated Assignment Name: "Assignment 2"
-                * Updated Description: "Updated Description"
-                * Updated Due Date: "2024-03-15"
+# Test Harness for AssignmentController
+
+This test harness is designed to test the functionalities of the AssignmentController.
+
+## Usage
+
+1. Clone the repository to your local machine.
+2. Compile the Java files using a Java compiler.
+3. Run the `Main` class to execute the test cases.
+
+## Test Cases
+
+### 1. Test Adding an Assignment
+
+- Creates a new assignment.
+- Adds the assignment to the list of assignments.
+- Checks if the assignment was successfully added.
+
+### 2. Test Updating an Assignment
+
+- Updates an existing assignment with new details.
+- Checks if the assignment was successfully updated.
+
+### 3. Test Removing an Assignment
+
+- Removes an assignment from the list of assignments.
+- Checks if the assignment was successfully removed.
+
+## Expected Output
+
+- For each test case, the console output will indicate whether the test passed or failed.
+
+## Notes
+
+- Make sure to have the necessary Java dependencies installed.
+- Update the Java classpaths if necessary.
 
 ## Members
 
