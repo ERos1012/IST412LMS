@@ -173,21 +173,11 @@ public class Main {
         TeacherController teacherController = new TeacherController();
         Teacher teacherToView = new Teacher("Dr. Smith", 456, "smith@example.com");
         Teacher viewedTeacher = teacherController.viewTeacher(teacherToView);
-<<<<<<< HEAD
-=======
-
-       
->>>>>>> 99718a987aa197ba6b639e25f92f14f5995d2190
     }
 
     public static void testGetAllTeachers() {
         TeacherController teacherController = new TeacherController();
         List<Teacher> allTeachers = teacherController.getAllTeachers();
-<<<<<<< HEAD
-=======
-
-        
->>>>>>> 99718a987aa197ba6b639e25f92f14f5995d2190
     }
 }
 
