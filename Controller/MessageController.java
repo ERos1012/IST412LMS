@@ -15,6 +15,7 @@ public class MessageController {
      * Sends a message.
      */
     public void sendMessage(Message message) {
+        System.out.println("Message sent: " + message.getMessage() + " " + message.getDate());
     }
 
     /**

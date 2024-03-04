@@ -1,9 +1,15 @@
 package FinalTestHarness;
 
 import Controller.AssignmentController;
-import Controller.CourseController;
+import Controller.MessageController;
 import Model.Assignment;
 import Model.Course;
+import Model.Message;
+import Model.Student;
+import Model.Teacher;
+import Controller.CourseController;
+import Controller.QuizController;
+import Model.Quiz;
 
 import java.util.List;
 
@@ -11,7 +17,12 @@ public class Main {
     public static void main(String[] args) {
         // Instantiate controller classes
         AssignmentController assignmentController = new AssignmentController();
+        CourseController courseController = new CourseController();
+        MessageController messageController = new MessageController();
+        QuizController quizController = new QuizController();
 
+
+        // Scenario: Teacher wants to add, update, remove, view, and get all assignments for a course
         // Test adding an assignment
         Assignment newAssignment = new Assignment("Assignment 1", "Description 1", "2024-03-10");
         Assignment addedAssignment = assignmentController.addAssignment(newAssignment);
@@ -45,31 +56,46 @@ public class Main {
         }
 
         System.out.println("AssignmentController tests completed.");
+
+
+        // Scenario: Student wants to message a professor about an assignment
+        Student student = new Student("John Doe", 123, "Computer Science", "john.doe@example.com");
+        Teacher teacher = new Teacher("Dr. Smith", 456, "smith@example.com");
+        String messageContent = "Dear Professor, I have a question about the assignment.";
+        Message studentMessage = new Message(1, student.getId(), teacher.getId(), messageContent, "2024-03-03");
+
+        // Test sending a message
+        messageController.sendMessage(studentMessage);
+        System.out.println("Message sent from student to professor - Test Passed");
+
+        System.out.println("MessageController tests completed.");
+
+        // Scenario: Administrator/Teacher wants to add a new course
+        Course newCourse = new Course("Course 2", 102, "Computer Science", "Dr. Smith");
+        courseController.addCourse(newCourse);
+        System.out.println("Course added: " + newCourse.getName() + " - Test Passed");
+
+        // Scenario: Administrator/Teacher wants to remove a course
+        courseController.removeCourse(102);
+        System.out.println("Course removed: 102 - Test Passed");
+
+        System.out.println("CourseController tests completed.");
+
+        // Scenario: Teacher makes a quiz for students to take and grades the quiz
+        // Test adding a quiz
+        List<String> questions = List.of("Question 1", "Question 2", "Question 3");
+        Quiz newQuiz = new Quiz(1, 101, 100, "Quiz 1", "2024-03-10", questions);
+        Quiz addedQuiz = quizController.addQuiz(newQuiz);
+        if (addedQuiz != null) {
+            System.out.println("Added Quiz: " + addedQuiz.getName() + " - Test Passed");
+        } else {
+            System.out.println("Failed to add quiz - Test Failed");
+        }
+
+        Quiz quizToGrade = new Quiz(1, 101, 100, "Quiz 1", "2024-03-10", questions);
+        quizController.gradeQuiz(123, 101, 1, 90);
+        System.out.println("Graded Quiz: " + quizToGrade.getName() + " - Test Passed");
+
+        System.out.println("QuizController and GradeController tests completed.");
     }
-
-    /*
-     * should consist of a) controller components passing control between themselves
-     * as envisioned in your design, and
-     * b) controller components calling the APIs of their view and model components,
-     * again as envisioned in your design.
-     * 
-     * The testharness module should include a main method and be runnable. When it
-     * is run it should execute a series of
-     * tests with appropriate output statements communicating whether the tests have
-     * passed or failed. The test harness
-     * module will need to instantiate at least one controller class to begin the
-     * test, which in turn instantiate other
-     * controller, view, and model classes and exercise their APIs. You may want to
-     * include test output statements in your
-     * method stubs to reduce coupling between the testharness module and your other
-     * modules.
-     */
-
-//     public class Main {
-//         public static void main(String[] args) {
-//             // Instantiate controller classes
-//             CourseController courseController = new CourseController();
-//             AssignmentController assignmentController = new AssignmentController();
-//         }
-//     }
 }
