@@ -7,6 +7,8 @@ import Model.Course;
 import Model.Message;
 import Model.Student;
 import Model.Teacher;
+import Controller.StudentController;
+import Controller.TeacherController;
 import Controller.CourseController;
 import Controller.QuizController;
 import Model.Quiz;
@@ -20,7 +22,6 @@ public class Main {
         CourseController courseController = new CourseController();
         MessageController messageController = new MessageController();
         QuizController quizController = new QuizController();
-
 
         // Scenario: Teacher wants to add, update, remove, view, and get all assignments for a course
         // Test adding an assignment
@@ -97,5 +98,51 @@ public class Main {
         System.out.println("Graded Quiz: " + quizToGrade.getName() + " - Test Passed");
 
         System.out.println("QuizController and GradeController tests completed.");
+    }
+}
+public class StudentControllerTest {
+
+    public static void main(String[] args) {
+        StudentControllerTest test = new StudentControllerTest();
+        test.testAddStudent();
+        test.testRemoveStudent();
+        test.testUpdateStudent();
+        test.testViewStudent();
+        test.testGetAllStudents();
+    }
+
+    public void testAddStudent() {
+        StudentController studentController = new StudentController();
+        Student studentToAdd = new Student("John Doe", 123, "Computer Science", "john.doe@example.com");
+        studentController.addStudent(studentToAdd);
+
+    }
+
+    public void testRemoveStudent() {
+        StudentController studentController = new StudentController();
+        Student studentToRemove = new Student("John Doe", 123, "Computer Science", "john.doe@example.com");
+        studentController.removeStudent(studentToRemove);
+
+    }
+
+    public void testUpdateStudent() {
+        StudentController studentController = new StudentController();
+        Student studentToUpdate = new Student("John Doe", 123, "Computer Science", "john.doe@example.com");
+        studentToUpdate.setEmail("updated.john.doe@example.com");
+        studentController.updateStudent(studentToUpdate);
+    }
+
+    public void testViewStudent() {
+        StudentController studentController = new StudentController();
+        Student studentToView = new Student("John Doe", 123, "Computer Science", "john.doe@example.com");
+        Student viewedStudent = studentController.viewStudent(studentToView);
+
+    }
+
+    public void testGetAllStudents() {
+        StudentController studentController = new StudentController();
+        Course course = new Course("Course 1", 101, "Computer Science", "Dr. Smith");
+        List<Student> allStudents = studentController.getAllStudents(course);
+
     }
 }
