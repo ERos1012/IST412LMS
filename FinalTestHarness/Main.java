@@ -22,6 +22,7 @@ public class Main {
         CourseController courseController = new CourseController();
         MessageController messageController = new MessageController();
         QuizController quizController = new QuizController();
+        StudentController studentController = new StudentController();
 
         // Scenario: Teacher wants to add, update, remove, view, and get all assignments for a course
         // Test adding an assignment
@@ -98,51 +99,45 @@ public class Main {
         System.out.println("Graded Quiz: " + quizToGrade.getName() + " - Test Passed");
 
         System.out.println("QuizController and GradeController tests completed.");
-    }
-}
-public class StudentControllerTest {
 
-    public static void main(String[] args) {
-        StudentControllerTest test = new StudentControllerTest();
-        test.testAddStudent();
-        test.testRemoveStudent();
-        test.testUpdateStudent();
-        test.testViewStudent();
-        test.testGetAllStudents();
+        // Testing StudentController
+        testAddStudent();
+        testRemoveStudent();
+        testUpdateStudent();
+        testViewStudent();
+        testGetAllStudents();
     }
 
-    public void testAddStudent() {
+    public static void testAddStudent() {
         StudentController studentController = new StudentController();
         Student studentToAdd = new Student("John Doe", 123, "Computer Science", "john.doe@example.com");
         studentController.addStudent(studentToAdd);
-
     }
 
-    public void testRemoveStudent() {
+    public static void testRemoveStudent() {
         StudentController studentController = new StudentController();
         Student studentToRemove = new Student("John Doe", 123, "Computer Science", "john.doe@example.com");
         studentController.removeStudent(studentToRemove);
 
     }
 
-    public void testUpdateStudent() {
+    public static void testUpdateStudent() {
         StudentController studentController = new StudentController();
         Student studentToUpdate = new Student("John Doe", 123, "Computer Science", "john.doe@example.com");
         studentToUpdate.setEmail("updated.john.doe@example.com");
         studentController.updateStudent(studentToUpdate);
     }
 
-    public void testViewStudent() {
+    public static void testViewStudent() {
         StudentController studentController = new StudentController();
         Student studentToView = new Student("John Doe", 123, "Computer Science", "john.doe@example.com");
         Student viewedStudent = studentController.viewStudent(studentToView);
-
     }
 
-    public void testGetAllStudents() {
+    public static void testGetAllStudents() {
         StudentController studentController = new StudentController();
         Course course = new Course("Course 1", 101, "Computer Science", "Dr. Smith");
         List<Student> allStudents = studentController.getAllStudents(course);
-
     }
 }
+

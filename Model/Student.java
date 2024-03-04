@@ -1,5 +1,8 @@
 package Model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * The Student class represents a student in the system.
  */
@@ -23,6 +26,25 @@ public class Student {
         this.id = id;
         this.program = program;
         this.email = email;
+    }
+
+    /**
+     * Adds dummy students to the Student class.
+     */
+    public static List<Student> addDummyStudents() {
+        List<Student> dummyStudents = new ArrayList<>();
+
+        // Create dummy students
+        Student student1 = new Student("John Doe", 1, "Computer Science", "john.doe@example.com");
+        Student student2 = new Student("Jane Smith", 2, "Engineering", "jane.smith@example.com");
+        Student student3 = new Student("Bob Johnson", 3, "Business", "bob.johnson@example.com");
+
+        // Add dummy students to the list
+        dummyStudents.add(student1);
+        dummyStudents.add(student2);
+        dummyStudents.add(student3);
+
+        return dummyStudents;
     }
     
     /**
@@ -70,5 +92,13 @@ public class Student {
         return classification;
     }
 
+    /**
+     * Sets the classification of the student.
+     * 
+     * @param classification The classification of the student.
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
 }
