@@ -151,7 +151,6 @@ public class Main {
         Teacher teacherToAdd = new Teacher("Dr. Smith", 456, "smith@example.com");
         teacherController.addTeacher(teacherToAdd);
 
-        // You can add assertion to validate the teacher addition here
     }
 
     public static void testRemoveTeacher() {
@@ -159,28 +158,36 @@ public class Main {
         Teacher teacherToRemove = new Teacher("Dr. Smith", 456, "smith@example.com");
         teacherController.removeTeacher(teacherToRemove);
 
-        // You can add assertion to validate the teacher removal here
     }
 
     public static void testUpdateTeacher() {
         TeacherController teacherController = new TeacherController();
         Teacher teacherToUpdate = new Teacher("Dr. Smith", 456, "smith@example.com");
-        // Modify teacher details
         teacherToUpdate.setEmail("updated.smith@example.com");
         teacherController.updateTeacher(teacherToUpdate);
 
-        // You can add assertion to validate the teacher update here
+       
     }
 
     public static void testViewTeacher() {
         TeacherController teacherController = new TeacherController();
         Teacher teacherToView = new Teacher("Dr. Smith", 456, "smith@example.com");
         Teacher viewedTeacher = teacherController.viewTeacher(teacherToView);
+<<<<<<< HEAD
+=======
+
+       
+>>>>>>> 99718a987aa197ba6b639e25f92f14f5995d2190
     }
 
     public static void testGetAllTeachers() {
         TeacherController teacherController = new TeacherController();
         List<Teacher> allTeachers = teacherController.getAllTeachers();
+<<<<<<< HEAD
+=======
+
+        
+>>>>>>> 99718a987aa197ba6b639e25f92f14f5995d2190
     }
 }
 
