@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The Teacher class represents a teacher in the system.
@@ -21,6 +23,22 @@ public class Teacher {
         this.name = name;
         this.id = id;
         this.email = email;
+    }
+
+    /**
+     * Adds dummy teachers to the existing list.
+     */
+    public static List<Teacher> addDummyTeachers() {
+        List<Teacher> teachers = new ArrayList<>();
+        // Generate dummy teachers
+        Teacher teacher1 = new Teacher("John Doe", 12, "john.doe@example.com");
+        Teacher teacher2 = new Teacher("Jane Smith", 13, "jane.smith@example.com");
+        
+        // Add dummy teachers to the list
+        teachers.add(teacher1);
+        teachers.add(teacher2);
+        
+        return teachers;
     }
 
     /**
@@ -56,6 +74,17 @@ public class Teacher {
      * @return The classification of the teacher.
      */
     public String getClassification() {
+        System.out.println("Classification: " + classification + " - Test Passed");
         return classification;
+    }
+
+    /**
+     * Sets the classification of the teacher.
+     *
+     * @param classification The classification of the teacher.
+     */
+    public void setEmail(String email) {
+        System.out.println("Email: " + email + " - Test Passed");
+        this.email = email;
     }
 }

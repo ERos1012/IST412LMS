@@ -22,7 +22,6 @@ public class Main {
         CourseController courseController = new CourseController();
         MessageController messageController = new MessageController();
         QuizController quizController = new QuizController();
-        StudentController studentController = new StudentController();
 
         // Scenario: Teacher wants to add, update, remove, view, and get all assignments for a course
         // Test adding an assignment
@@ -106,6 +105,13 @@ public class Main {
         testUpdateStudent();
         testViewStudent();
         testGetAllStudents();
+
+        // Testing TeacherController
+        testAddTeacher();
+        testRemoveTeacher();
+        testUpdateTeacher();
+        testViewTeacher();
+        testGetAllTeachers();
     }
 
     public static void testAddStudent() {
@@ -140,16 +146,7 @@ public class Main {
         List<Student> allStudents = studentController.getAllStudents(course);
     }
 
-    public static void main(String[] args) {
-        TeacherControllerTest test = new TeacherControllerTest();
-        test.testAddTeacher();
-        test.testRemoveTeacher();
-        test.testUpdateTeacher();
-        test.testViewTeacher();
-        test.testGetAllTeachers();
-    }
-
-    public void testAddTeacher() {
+    public static void testAddTeacher() {
         TeacherController teacherController = new TeacherController();
         Teacher teacherToAdd = new Teacher("Dr. Smith", 456, "smith@example.com");
         teacherController.addTeacher(teacherToAdd);
@@ -157,7 +154,7 @@ public class Main {
         // You can add assertion to validate the teacher addition here
     }
 
-    public void testRemoveTeacher() {
+    public static void testRemoveTeacher() {
         TeacherController teacherController = new TeacherController();
         Teacher teacherToRemove = new Teacher("Dr. Smith", 456, "smith@example.com");
         teacherController.removeTeacher(teacherToRemove);
@@ -165,7 +162,7 @@ public class Main {
         // You can add assertion to validate the teacher removal here
     }
 
-    public void testUpdateTeacher() {
+    public static void testUpdateTeacher() {
         TeacherController teacherController = new TeacherController();
         Teacher teacherToUpdate = new Teacher("Dr. Smith", 456, "smith@example.com");
         // Modify teacher details
@@ -175,20 +172,16 @@ public class Main {
         // You can add assertion to validate the teacher update here
     }
 
-    public void testViewTeacher() {
+    public static void testViewTeacher() {
         TeacherController teacherController = new TeacherController();
         Teacher teacherToView = new Teacher("Dr. Smith", 456, "smith@example.com");
         Teacher viewedTeacher = teacherController.viewTeacher(teacherToView);
-
-        // You can add assertion to validate the viewed teacher here
     }
 
-    public void testGetAllTeachers() {
+    public static void testGetAllTeachers() {
         TeacherController teacherController = new TeacherController();
         List<Teacher> allTeachers = teacherController.getAllTeachers();
-
-        // You can add assertion to validate the list of teachers here
     }
 }
-}
+
 

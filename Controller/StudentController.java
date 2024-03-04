@@ -47,7 +47,7 @@ public class StudentController {
     public List<Student> getAllStudents(Course course) {
         List<Student> students = Student.addDummyStudents();
         for (Student student : students) {
-            System.out.println("Name: " + student.getName() + ", Email: " + student.getEmail());
+            System.out.println("Student Name: " + student.getName() + ", Email: " + student.getEmail());
         }
         return List.of();
     }
