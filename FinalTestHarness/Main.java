@@ -100,6 +100,55 @@ public class Main {
         System.out.println("QuizController and GradeController tests completed.");
     }
 }
+
+public class TeacherControllerTest {
+
+    public static void main(String[] args) {
+        TeacherControllerTest test = new TeacherControllerTest();
+        test.testAddTeacher();
+        test.testRemoveTeacher();
+        test.testUpdateTeacher();
+        test.testViewTeacher();
+        test.testGetAllTeachers();
+    }
+
+    public void testAddTeacher() {
+        TeacherController teacherController = new TeacherController();
+        Teacher teacherToAdd = new Teacher("Dr. Smith", 456, "smith@example.com");
+        teacherController.addTeacher(teacherToAdd);
+
+        // You can add assertion to validate the teacher addition here
+    }
+
+    public void testRemoveTeacher() {
+        TeacherController teacherController = new TeacherController();
+        Teacher teacherToRemove = new Teacher("Dr. Smith", 456, "smith@example.com");
+        teacherController.removeTeacher(teacherToRemove);
+
+    }
+
+    public void testUpdateTeacher() {
+        TeacherController teacherController = new TeacherController();
+        Teacher teacherToUpdate = new Teacher("Dr. Smith", 456, "smith@example.com");
+        // Modify teacher details
+        teacherToUpdate.setEmail("updated.smith@example.com");
+        teacherController.updateTeacher(teacherToUpdate);
+
+    }
+
+    public void testViewTeacher() {
+        TeacherController teacherController = new TeacherController();
+        Teacher teacherToView = new Teacher("Dr. Smith", 456, "smith@example.com");
+        Teacher viewedTeacher = teacherController.viewTeacher(teacherToView);
+
+    }
+
+    public void testGetAllTeachers() {
+        TeacherController teacherController = new TeacherController();
+        List<Teacher> allTeachers = teacherController.getAllTeachers();
+
+    }
+}
 public class StudentControllerTest {
 
     public static void main(String[] args) {
