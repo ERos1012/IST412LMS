@@ -52,7 +52,8 @@ public class QuizView extends JFrame {
      * Updates the labels with quiz details.
      */
     private void updateQuizDetails() {
-        Quiz quiz = quizController.viewQuiz(); // Assuming this method retrieves quiz details from the controller
+        Quiz quiz = null; // Initialize the quiz variable
+        quiz = quizController.viewQuiz(quiz); 
         idLabel.setText("ID: " + quiz.getId());
         courseIdLabel.setText("Course ID: " + quiz.getCourseId());
         gradeLabel.setText("Grade: " + quiz.getGrade());

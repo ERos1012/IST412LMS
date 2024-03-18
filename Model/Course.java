@@ -1,5 +1,8 @@
 package Model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * The Course class represents a course in the system.
  */
@@ -7,22 +10,30 @@ public class Course {
     private String name;
     private int id;
     private String program;
-    private String email;
-    private String classification;
+    private String instructor;
+
+    // Dummy list of courses
+    private static List<Course> dummyCourses = new ArrayList<>();
+
+    static {
+        dummyCourses.add(new Course("Math", 101, "Engineering", "Dr. Smith"));
+        dummyCourses.add(new Course("Physics", 102, "Science", "Prof. Johnson"));
+        dummyCourses.add(new Course("Literature", 103, "Arts", "Dr. Brown"));
+    }
 
     /**
-     * Constructs a new Course object with the specified name, ID, program, and email.
+     * Constructs a new Course object with the specified name, ID, program, and instructor.
      * 
      * @param name The name of the course.
      * @param id The ID of the course.
      * @param program The program to which the course belongs.
-     * @param email The email address associated with the course.
+     * @param instructor The instructor of the course.
      */
-    public Course(String name, int id, String program, String email) {
+    public Course(String name, int id, String program, String instructor) {
         this.name = name;
         this.id = id;
         this.program = program;
-        this.email = email;
+        this.instructor = instructor;
     }
     
     /**
@@ -53,20 +64,20 @@ public class Course {
     }
 
     /**
-     * Gets the email address associated with the course.
+     * Gets the instructor of the course.
      * 
-     * @return The email address associated with the course.
+     * @return The instructor of the course.
      */
-    public String getEmail() {
-        return email;
+    public String getInstructor() {
+        return instructor;
     }
 
     /**
-     * Gets the classification of the course.
+     * Gets a list of dummy courses.
      * 
-     * @return The classification of the course.
+     * @return List of dummy courses.
      */
-    public String getClassification() {
-        return classification;
+    public static List<Course> getDummyCourses() {
+        return dummyCourses;
     }
 }

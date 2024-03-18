@@ -15,16 +15,16 @@ public class MessageController {
      * Sends a message.
      */
     public void sendMessage(Message message) {
+        System.out.println("Message sent: " + message.getMessage() + " " + message.getDate());
     }
 
     /**
      * Views a message.
      */
-    public String viewMessage(Message message) {
-        // demo
-        String theMessage = message.getMessage();
-        return theMessage;
+    public Message viewMessage(Message message) {
+        return message; 
     }
+    
 
     /**
      * Deletes a message.

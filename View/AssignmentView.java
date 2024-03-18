@@ -1,17 +1,22 @@
 package View;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import Controller.AssignmentController;
 import Model.Assignment;
 
 /**
- * The AssignmentView class represents a graphical user interface for displaying assignment details.
+ * The AssignmentView class represents a graphical user interface for managing assignment details.
  */
 public class AssignmentView extends JFrame {
     private JLabel nameLabel;
+    private JTextField nameTextField;
     private JLabel descriptionLabel;
+    private JTextField descriptionTextField;
     private JLabel dueDateLabel;
+    private JTextField dueDateTextField;
     private AssignmentController assignmentController;
 
     /**
@@ -25,37 +30,86 @@ public class AssignmentView extends JFrame {
 
         // Initialize labels
         nameLabel = new JLabel("Name: ");
+        nameTextField = new JTextField(20); // Text field for name
         descriptionLabel = new JLabel("Description: ");
+        descriptionTextField = new JTextField(20); // Text field for description
         dueDateLabel = new JLabel("Due Date: ");
+        dueDateTextField = new JTextField(20); // Text field for due date
 
-        // Create a panel to hold the labels
+        // Create buttons
+        JButton addButton = new JButton("Add");
+        JButton removeButton = new JButton("Remove");
+        JButton updateButton = new JButton("Update");
+        JButton viewButton = new JButton("View");
+        JButton submitButton = new JButton("Submit");
+
+        // Create a panel to hold the labels, text fields, and buttons
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.add(nameLabel);
+        panel.add(nameTextField);
         panel.add(descriptionLabel);
+        panel.add(descriptionTextField);
         panel.add(dueDateLabel);
+        panel.add(dueDateTextField);
+        panel.add(addButton);
+        panel.add(removeButton);
+        panel.add(updateButton);
+        panel.add(viewButton);
+        panel.add(submitButton);
+
+        // Add action listeners to buttons
+        addButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Call method to add assignment
+                String name = nameTextField.getText();
+                String description = descriptionTextField.getText();
+                String dueDate = dueDateTextField.getText();
+                Assignment newAssignment = new Assignment(name, description, dueDate);
+                assignmentController.addAssignment(newAssignment);
+            }
+        });
+
+        removeButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Call method to remove assignment
+                assignmentController.removeAssignment();
+            }
+        });
+
+        updateButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Call method to update assignment
+                assignmentController.updateAssignment();
+            }
+        });
+
+        viewButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Call method to view assignment
+                String name = nameTextField.getText();
+                String description = descriptionTextField.getText();
+                String dueDate = dueDateTextField.getText();
+                Assignment newAssignment = new Assignment(name, description, dueDate);
+                assignmentController.viewAssignment(newAssignment);
+            }
+        });
+
+        submitButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Call method to submit assignment
+                assignmentController.submitAssignment();
+            }
+        });
 
         // Add the panel to the frame
         getContentPane().add(panel);
 
         // Set frame properties
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(300, 150);
+        setSize(300, 250);
         setLocationRelativeTo(null); // Center the frame
         setVisible(true);
-
-        // Retrieve assignment details from the controller and update labels
-        updateAssignmentDetails(assignment);
-    }
-
-    /**
-     * Updates the labels with assignment details.
-     */
-    private void updateAssignmentDetails(Assignment assignment) {
-        Assignment updatedAssignment = assignmentController.viewAssignment(assignment);
-        nameLabel.setText("Name: " + assignment.getName());
-        descriptionLabel.setText("Description: " + assignment.getDescription());
-        dueDateLabel.setText("Due Date: " + assignment.getDueDate());
     }
 
     /**
@@ -64,6 +118,6 @@ public class AssignmentView extends JFrame {
      * @param args the command-line arguments
      */
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(AssignmentView::new);
+        SwingUtilities.invokeLater(() -> { new AssignmentView(null); });
     }
 }

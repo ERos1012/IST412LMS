@@ -12,19 +12,19 @@ public class AssignmentController {
     /**
      * Adds a new assignment to the system.
      */
-    public void addAssignment(Assignment assignment) {
+    public void addAssignment() {
     }
 
     /**
      * Removes an existing assignment from the system.
      */
-    public void removeAssignment(Assignment assignment) {
+    public void removeAssignment() {
     }
 
     /**
      * Updates an existing assignment in the system.
      */
-    public void updateAssignment(Assignment assignment) {
+    public void updateAssignment() {
     }
 
     /**
@@ -38,7 +38,7 @@ public class AssignmentController {
     /**
      * Submits an assignment.
      */
-    public void submitAssignment(Assignment assignment) {
+    public void submitAssignment() {
     }
 
     /**

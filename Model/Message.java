@@ -27,6 +27,9 @@ public class Message {
         this.date = date;
     }
     
+    public Message(){
+    }
+
     /**
      * Gets the ID of the message.
      * 
