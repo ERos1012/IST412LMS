@@ -12,7 +12,7 @@ import Model.Course;
 /**
  * The CourseView class represents a graphical user interface for displaying course details.
  */
-public class CourseView extends JFrame {
+public class CourseView extends JPanel {
     private JTextArea courseTextArea = new JTextArea();
     private JButton addButton;
     private JButton removeButton;
@@ -24,8 +24,7 @@ public class CourseView extends JFrame {
      * Constructs a new CourseView object.
      */
     public CourseView(CourseController courseController) {
-        super("Course Details");
-
+        super();
         this.courseController = courseController;
 
         initializeUI();
@@ -144,12 +143,11 @@ public class CourseView extends JFrame {
     mainPanel.add(inputPanel, BorderLayout.WEST);
     mainPanel.add(dummyScrollPane, BorderLayout.EAST);
     
-        getContentPane().add(mainPanel);
-    
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(700, 300);
-        setLocationRelativeTo(null);
-        setVisible(true);
+    // Add the main panel to the CourseView
+    setLayout(new BorderLayout());
+    add(mainPanel, BorderLayout.NORTH);
+    add(new JScrollPane(courseTextArea), BorderLayout.CENTER);
+    setPreferredSize(new Dimension(800, 400));
     }    
     
     /**

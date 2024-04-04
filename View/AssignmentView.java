@@ -10,7 +10,7 @@ import Model.Assignment;
 /**
  * The AssignmentView class represents a graphical user interface for managing assignment details.
  */
-public class AssignmentView extends JFrame {
+public class AssignmentView extends JPanel {
     private JLabel nameLabel;
     private JTextField nameTextField;
     private JLabel descriptionLabel;
@@ -22,9 +22,8 @@ public class AssignmentView extends JFrame {
     /**
      * Constructs a new AssignmentView object.
      */
-    public AssignmentView(Assignment assignment) {
-        super("Assignment Details");
-
+    public AssignmentView() {
+        super();
         // Initialize the AssignmentController
         assignmentController = new AssignmentController();
 
@@ -102,14 +101,8 @@ public class AssignmentView extends JFrame {
             }
         });
 
-        // Add the panel to the frame
-        getContentPane().add(panel);
-
-        // Set frame properties
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(300, 250);
-        setLocationRelativeTo(null); // Center the frame
-        setVisible(true);
+        // Add the panel to the MainView
+        add(panel);
     }
 
     /**
@@ -118,6 +111,6 @@ public class AssignmentView extends JFrame {
      * @param args the command-line arguments
      */
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> { new AssignmentView(null); });
+        SwingUtilities.invokeLater(() -> { new AssignmentView(); });
     }
 }

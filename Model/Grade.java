@@ -24,6 +24,14 @@ public class Grade {
         this.grade = grade;
     }
     
+    // empty constructor
+    public Grade() {
+        this.id = 0;
+        this.studentId = 0;
+        this.courseId = 0;
+        this.grade = 0;
+    }
+    
     /**
      * Gets the ID of the grade.
      * 

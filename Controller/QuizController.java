@@ -36,8 +36,10 @@ public class QuizController {
      * Views details of a specific quiz.
      */
     public Quiz viewQuiz(Quiz quiz) {
-        // demo
-        System.out.println("Quiz details: " + quiz.getName() + " " + quiz.getId() + " " + quiz.getDueDate() + " " + quiz.getQuestions());
+        if (quiz == null) {
+            return new Quiz(0, 0, 0, "Default Quiz", "Default Due Date", List.of("Default Question")); 
+        }
+        // logic for retrieving and returning a Quiz object
         return quiz;
     }
 

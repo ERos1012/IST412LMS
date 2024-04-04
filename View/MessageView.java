@@ -8,7 +8,7 @@ import Model.Message;
 /**
  * The MessageView class represents a graphical user interface for displaying message details.
  */
-public class MessageView extends JFrame {
+public class MessageView extends JPanel {
     private JLabel idLabel;
     private JLabel senderIdLabel;
     private JLabel receiverIdLabel;
@@ -20,8 +20,7 @@ public class MessageView extends JFrame {
      * Constructs a new MessageView object.
      */
     public MessageView() {
-        super("Message Details");
-
+        super();
         // Initialize the MessageController
         messageController = new MessageController();
 
@@ -42,13 +41,7 @@ public class MessageView extends JFrame {
         panel.add(dateLabel);
 
         // Add the panel to the frame
-        getContentPane().add(panel);
-
-        // Set frame properties
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(300, 150);
-        setLocationRelativeTo(null); // Center the frame
-        setVisible(true);
+        add(panel);
 
         // Retrieve message details from the controller and update labels
         updateMessageDetails();

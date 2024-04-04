@@ -13,6 +13,7 @@ public class AssignmentController {
      * Adds a new assignment to the system.
      */
     public Assignment addAssignment(Assignment assignment) {
+        System.out.println("Assignment added successfully");
         return assignment;
     }
     

@@ -8,7 +8,7 @@ import Model.Grade;
 /**
  * The GradeView class represents a graphical user interface for displaying grade details.
  */
-public class GradeView extends JFrame {
+public class GradeView extends JPanel {
     private JLabel idLabel;
     private JLabel studentIdLabel;
     private JLabel courseIdLabel;
@@ -19,8 +19,7 @@ public class GradeView extends JFrame {
      * Constructs a new GradeView object.
      */
     public GradeView(Grade grade) {
-        super("Grade Details");
-
+        super();
         // Initialize the GradeController
         gradeController = new GradeController();
 
@@ -39,13 +38,7 @@ public class GradeView extends JFrame {
         panel.add(gradeLabel);
 
         // Add the panel to the frame
-        getContentPane().add(panel);
-
-        // Set frame properties
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(300, 150);
-        setLocationRelativeTo(null); // Center the frame
-        setVisible(true);
+        add(panel);
 
         // Retrieve grade details from the controller and update labels
         updateGradeDetails(grade);
