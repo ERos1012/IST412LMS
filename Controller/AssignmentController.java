@@ -12,8 +12,10 @@ public class AssignmentController {
     /**
      * Adds a new assignment to the system.
      */
-    public void addAssignment() {
+    public Assignment addAssignment(Assignment assignment) {
+        return assignment;
     }
+    
 
     /**
      * Removes an existing assignment from the system.
