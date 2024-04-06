@@ -7,7 +7,7 @@
 The Factory Method was implemented through the Quiz Questions group of classes. A superclass of Questions were created where different types 
 were based off. Examples of these classes are Multiple Choice and True/False. By using Factory Method in our project, we can make more types 
 of questions in the future.
-- User Interface Patter (Navigation): 
+- User Interface Pattern (Navigation): 
 The navigation was used to view the various use cases of our system like the Assignment, Course, Grade, Message, and Quiz layouts. A navigation
 is important to help users effectively control the different features of our system and to create a good flow of information.
 
