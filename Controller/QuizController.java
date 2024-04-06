@@ -37,7 +37,7 @@ public class QuizController {
      */
     public Quiz viewQuiz(Quiz quiz) {
         if (quiz == null) {
-            return new Quiz(0, 0, 0, "Default Quiz", "Default Due Date", List.of("Default Question")); 
+            return new Quiz(0, 0, 0, "Default Quiz", "Default Due Date", List.of()); 
         }
         // logic for retrieving and returning a Quiz object
         return quiz;

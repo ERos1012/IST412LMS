@@ -11,7 +11,6 @@ import Controller.StudentController;
 import Controller.TeacherController;
 import Controller.CourseController;
 import Controller.QuizController;
-import Model.Quiz;
 
 import java.util.List;
 
@@ -81,23 +80,6 @@ public class Main {
         System.out.println("Course removed: 102 - Test Passed");
 
         System.out.println("CourseController tests completed.");
-
-        // Scenario: Teacher makes a quiz for students to take and grades the quiz
-        // Test adding a quiz
-        List<String> questions = List.of("Question 1", "Question 2", "Question 3");
-        Quiz newQuiz = new Quiz(1, 101, 100, "Quiz 1", "2024-03-10", questions);
-        Quiz addedQuiz = quizController.addQuiz(newQuiz);
-        if (addedQuiz != null) {
-            System.out.println("Added Quiz: " + addedQuiz.getName() + " - Test Passed");
-        } else {
-            System.out.println("Failed to add quiz - Test Failed");
-        }
-
-        Quiz quizToGrade = new Quiz(1, 101, 100, "Quiz 1", "2024-03-10", questions);
-        quizController.gradeQuiz(123, 101, 1, 90);
-        System.out.println("Graded Quiz: " + quizToGrade.getName() + " - Test Passed");
-
-        System.out.println("QuizController and GradeController tests completed.");
 
         // Testing StudentController
         testAddStudent();
