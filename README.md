@@ -2,20 +2,12 @@
 
 # M03-A04 Implemented Design Patterns 
 
-1. Eric Rosario
-- Object-Oriented Pattern (Factory Method): 
-The Factory Method was implemented through the Quiz Questions group of classes. A superclass of Questions were created where different types 
-were based off. Examples of these classes are Multiple Choice and True/False. By using Factory Method in our project, we can make more types 
-of questions in the future.
-- User Interface Patter (Navigation): 
-The navigation was used to view the various use cases of our system like the Assignment, Course, Grade, Message, and Quiz layouts. A navigation
-is important to help users effectively control the different features of our system and to create a good flow of information.
-
-2. Kai Huang
-
-3. Bryan Zhou
-
-4. Anish Nangare
+| Team-Member ID | Team-Member Name | Design Pattern Implemented      | Classes / Interfaces implementing the Design Pattern                                                                                                                                                         |
+|----------------|------------------|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| evr5419        | Eric Rosario     | Factory Method and Navigation   | Model: Question, MultipleChoiceQuestion, TrueOrFalseQuestion<br>Controller: QuizController<br>Factory: QuestionCreator, MultipleChoiceQuestionCreator, TrueOrFalseQuestionCreator<br>View: QuizApp, MainView |
+| klh6157        | Kai Huang        |                                 |                                                                                                                                                                                                              |
+| bqz5148        | Bryan Zhou       | Decorator and Morphing Controls | View: CourseView / DecoratorPattern, ClearDashboard, CourseDecorator, DashboardDecorator, MessageDecorator                                                                                                   |
+| agn5089        | Anish Nangare    |                                 |
 
 # Test Harness for AssignmentController
 
@@ -131,15 +123,15 @@ This test harness is designed to test the functionalities of the AssignmentContr
 3. Anish Nangare
 4. Bryan Zhou
 
-| Team Member ID + Name   |  Contribution in the CM02-A03 System Component API Stubs and Automated System Tests       |
-| ----------------------- |  -----------------------------------------------------------------------------------------|
-| evr5419 + Eric Rosario  | - Coded the tests for the Course, Grade, Message, and Quiz Controller (part 2) |
-| klh6157 + Kai Huang     | - Coded the tests for the Assignment Controller (part 2)                    |
-| agn5089 + Anish Nangare | - Coded the tests for the Student, and Teacher Controller (part 2)                     |
-| bqz5148 + Bryan Zhou    | - Completed part 1 of the assignment  
+| Team Member ID + Name   | Contribution in the CM02-A03 System Component API Stubs and Automated System Tests |
+|-------------------------|------------------------------------------------------------------------------------|
+| evr5419 + Eric Rosario  | - Coded the tests for the Course, Grade, Message, and Quiz Controller (part 2)     |
+| klh6157 + Kai Huang     | - Coded the tests for the Assignment Controller (part 2)                           |
+| agn5089 + Anish Nangare | - Coded the tests for the Student, and Teacher Controller (part 2)                 |
+| bqz5148 + Bryan Zhou    | - Completed part 1 of the assignment                                               |
 
-| Team Member ID + Name   |  Contribution in The M02-A02 Project Function Point Analysis and Estimate                 |
-| ----------------------- |  -----------------------------------------------------------------------------------------|
+| Team Member ID + Name   | Contribution in The M02-A02 Project Function Point Analysis and Estimate                  |
+|-------------------------|-------------------------------------------------------------------------------------------|
 | evr5419 + Eric Rosario  | - Programmed the class structure and methods<br>- Exported the Javadoc html documentation |
 | klh6157 + Kai Huang     | - Wrote the Word Document detailing class structure and functionality                     |
 | agn5089 + Anish Nangare | - Wrote the Word Document detailing class structure and functionality                     |
