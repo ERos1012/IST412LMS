@@ -2,24 +2,13 @@
 
 # M03-A04 Implemented Design Patterns 
 
-1. Eric Rosario
-- Object-Oriented Pattern (Factory Method): 
-The Factory Method was implemented through the Quiz Questions group of classes. A superclass of Questions were created where different types 
-were based off. Examples of these classes are Multiple Choice and True/False. By using Factory Method in our project, we can make more types 
-of questions in the future.
-- User Interface Pattern (Navigation): 
-The navigation was used to view the various use cases of our system like the Assignment, Course, Grade, Message, and Quiz layouts. A navigation
-is important to help users effectively control the different features of our system and to create a good flow of information.
+| Team-Member ID | Team-Member Name | Design Pattern Implemented    | Classes / Interfaces implementing the Design Pattern                                                                                                                                               |
+| -------------- | ---------------- | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| evr5419        | Eric Rosario     | Factory Method and Navigation | Model: Question, MultipleChoiceQuestion, TrueOrFalseQuestion<br>Controller: QuizController<br>Factory: QuestionCreator, MultipleChoiceQuestionCreator, TrueOrFalseQuestionCreator<br>View: QuizApp, MainView |
+| klh6157        | Kai Huang        | Facade and Event Calender                           | Controller: EventController, EventCalendarController, FacadeController<br>Model: Event, EventCalendar                                                                                                                                                                                                   |
+| bqz5148        | Bryan Zhou       | Decorator and Morphing Control                              | View: CourseView / DecoratorPattern, ClearDashboard, CourseDecorator, DashboardDecorator, MessageDecorator                                                                                                                                                                                                   |
+| agn5089        | Anish Nangare    |                               |  
 
-2. Kai Huang
-
-3. Bryan Zhou
-- Object-Oriented Pattern (Decorator):
-    
-- User Interface Pattern (Morphing Controls):
-  
-
-4. Anish Nangare
 
 # Test Harness for AssignmentController
 
