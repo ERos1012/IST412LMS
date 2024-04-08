@@ -1,4 +1,4 @@
-// password-strength.js
+password-strength.java
 
 const passwordInput = document.querySelector('input[name="password"]');
 const strengthMeter = document.getElementById('password-strength-meter');
