@@ -3,11 +3,11 @@ import Model.Course;
 
 public class CourseDecorator extends DashboardDecorator {
 
-    public void addCoursePanel(){
+    public static void addCoursePanel(){
 
     }
 
-    public void removeCoursePanel(){
+    public static void removeCoursePanel(){
 
     }
 }
