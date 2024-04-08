@@ -8,5 +8,10 @@
         <outputRelativeToContentRoot value="true" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="out" target="1.5" />
+      <module name="src" target="1.5" />
+      <module name="untitled" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -40,7 +40,7 @@ public class CourseView extends JPanel {
         JTextField idField = new JTextField(10);
         JTextField programField = new JTextField(20);
         JTextField instructorField = new JTextField(20);
-    
+
         // Add button to trigger course addition
         addButton = new JButton("Add");
         addButton.addActionListener(new ActionListener() {
@@ -51,13 +51,13 @@ public class CourseView extends JPanel {
                 String idText = idField.getText().trim();
                 String program = programField.getText().trim();
                 String instructor = instructorField.getText().trim();
-    
+
                 // Check if any field is empty
                 if (name.isEmpty() || idText.isEmpty() || program.isEmpty() || instructor.isEmpty()) {
                     JOptionPane.showMessageDialog(CourseView.this, "All fields are required!", "Error", JOptionPane.ERROR_MESSAGE);
                     return; // Exit without adding the course
                 }
-    
+
                 // Parse ID to integer
                 int id;
                 try {
@@ -66,16 +66,18 @@ public class CourseView extends JPanel {
                     JOptionPane.showMessageDialog(CourseView.this, "Invalid ID!", "Error", JOptionPane.ERROR_MESSAGE);
                     return; // Exit without adding the course
                 }
-    
+
                 // Create new course object
                 Course newCourse = new Course(name, id, program, instructor);
-    
+
                 // Add course to the system
                 courseController.addCourse(newCourse);
                 System.out.println("Course added: Name - " + name + ", ID - " + id + ", Program - " + program + ", Instructor - " + instructor);
+                // Update course details after adding
+                updateCourseDetails();
             }
         });
-    
+
         // View button to display course details
         viewButton = new JButton("View");
         viewButton.addActionListener(new ActionListener() {
@@ -85,7 +87,7 @@ public class CourseView extends JPanel {
                 courseController.viewCourse(new Course("IST", 120, "Engineering", "Dr. Lee"));
             }
         });
-    
+
         // Update button to update course details
         updateButton = new JButton("Update");
         updateButton.addActionListener(new ActionListener() {
@@ -94,80 +96,119 @@ public class CourseView extends JPanel {
                 courseController.updateCourse(new Course("Math", 101, "Engineering", "Dr. Smith"));
             }
         });
-    
+
         // Remove button to remove a course
         removeButton = new JButton("Remove");
         removeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 courseController.removeCourse(101);
+                // Update course details after removing
+                updateCourseDetails();
             }
         });
-    
-        // Panel to hold text fields and buttons for adding, viewing, updating, and removing courses
-    JPanel inputPanel = new JPanel();
-    inputPanel.setLayout(new GridLayout(6, 2));
-    inputPanel.add(new JLabel("Course Name:"));
-    inputPanel.add(nameField);
-    inputPanel.add(new JLabel("Course ID:"));
-    inputPanel.add(idField);
-    inputPanel.add(new JLabel("Program:"));
-    inputPanel.add(programField);
-    inputPanel.add(new JLabel("Instructor:"));
-    inputPanel.add(instructorField);
-    inputPanel.add(addButton);
-    inputPanel.add(viewButton);
-    inputPanel.add(updateButton);
-    inputPanel.add(removeButton);
 
-    // Panel to display dummy courses
-    JPanel dummyCoursesPanel = new JPanel();
-    dummyCoursesPanel.setLayout(new BoxLayout(dummyCoursesPanel, BoxLayout.Y_AXIS));
-    List<Course> dummyCourses = Course.getDummyCourses();
-    for (Course course : dummyCourses) {
-        JLabel dummyLabel = new JLabel("Dummy Course: " + course.getName() + ", ID: " + course.getId());
-        JLabel dummyLabel2 = new JLabel("Program: " + course.getProgram() + ", Instructor: " + course.getInstructor() + "\n");
-        JLabel spacer = new JLabel(" ");
-        dummyCoursesPanel.add(dummyLabel);
-        dummyCoursesPanel.add(dummyLabel2);
-        dummyCoursesPanel.add(spacer);
+        // Panel to hold text fields and buttons for adding, viewing, updating, and removing courses
+        JPanel inputPanel = new JPanel();
+        inputPanel.setLayout(new GridLayout(6, 2));
+        inputPanel.add(new JLabel("Course Name:"));
+        inputPanel.add(nameField);
+        inputPanel.add(new JLabel("Course ID:"));
+        inputPanel.add(idField);
+        inputPanel.add(new JLabel("Program:"));
+        inputPanel.add(programField);
+        inputPanel.add(new JLabel("Instructor:"));
+        inputPanel.add(instructorField);
+        inputPanel.add(addButton);
+        inputPanel.add(viewButton);
+        inputPanel.add(updateButton);
+        inputPanel.add(removeButton);
+
+        // Add the input panel to the CourseView
+        add(inputPanel, BorderLayout.NORTH);
     }
 
-    // Scroll pane for dummy courses panel
-    JScrollPane dummyScrollPane = new JScrollPane(dummyCoursesPanel);
-    dummyScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-
-    // Panel to hold both input and dummy courses panels
-    JPanel mainPanel = new JPanel();
-    mainPanel.setLayout(new BorderLayout());
-    mainPanel.add(inputPanel, BorderLayout.WEST);
-    mainPanel.add(dummyScrollPane, BorderLayout.EAST);
-    
-    // Add the main panel to the CourseView
-    setLayout(new BorderLayout());
-    add(mainPanel, BorderLayout.NORTH);
-    add(new JScrollPane(courseTextArea), BorderLayout.CENTER);
-    setPreferredSize(new Dimension(800, 400));
-    }    
-    
     /**
-     * Updates the text area with course details.
+     * Updates the UI to display course details using separate panels for each course.
      */
     private void updateCourseDetails() {
+        // Create a panel to hold all course panels
+        JPanel coursesPanel = new JPanel();
+        coursesPanel.setLayout(new BoxLayout(coursesPanel, BoxLayout.Y_AXIS));
+
+        // Get all courses
         List<Course> courses = courseController.getAllCourses();
-        StringBuilder sb = new StringBuilder();
         for (Course course : courses) {
-            sb.append("Name: ").append(course.getName()).append("\n");
-            sb.append("ID: ").append(course.getId()).append("\n");
-            sb.append("Program: ").append(course.getProgram()).append("\n");
-            sb.append("Professor: ").append(course.getInstructor()).append("\n\n");
+            // Create a panel for each course
+            JPanel coursePanel = new JPanel();
+            coursePanel.setLayout(new BorderLayout());
+
+            // Create a label to display course details
+            JLabel courseLabel = new JLabel("Name: " + course.getName() + ", ID: " + course.getId() +
+                    ", Program: " + course.getProgram() + ", Professor: " + course.getInstructor());
+
+            // Create a favorite/unfavorite button
+            JButton favoriteButton = new JButton("Favorite");
+            favoriteButton.addActionListener(new FavoriteButtonActionListener(course, favoriteButton));
+
+            // Add course label and favorite/unfavorite button to the course panel
+            coursePanel.add(courseLabel, BorderLayout.CENTER);
+            coursePanel.add(favoriteButton, BorderLayout.EAST);
+
+            // Add the course panel to the coursesPanel
+            coursesPanel.add(coursePanel);
         }
-        courseTextArea.setText(sb.toString());
+
+        // Remove the old courseTextArea
+        remove(courseTextArea);
+
+        // Add the coursesPanel to the CourseView
+        add(new JScrollPane(coursesPanel), BorderLayout.CENTER);
+
+        // Refresh the CourseView
+        revalidate();
+        repaint();
+    }
+
+    /**
+     * Action listener for favorite/unfavorite button.
+     */
+    private class FavoriteButtonActionListener implements ActionListener {
+        private Course course;
+        private JButton button;
+        private boolean isFavorite;
+
+        public FavoriteButtonActionListener(Course course, JButton button) {
+            this.course = course;
+            this.button = button;
+            this.isFavorite = false;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            isFavorite = !isFavorite;
+            if (isFavorite) {
+                button.setText("Favorited");
+                // Change button color, icon, etc. to indicate favorited state
+            } else {
+                button.setText("Favorite");
+                // Change button color, icon, etc. to indicate unfavorited state
+            }
+
+            // Handle favorite/unfavorite action accordingly
+            if (isFavorite) {
+                // Add course to favorites
+                System.out.println("Course added to favorites: " + course.getName());
+            } else {
+                // Remove course from favorites
+                System.out.println("Course removed from favorites: " + course.getName());
+            }
+        }
     }
 
     /**
      * The main method to launch the CourseView.
-     * 
+     *
      * @param args the command-line arguments
      */
     public static void main(String[] args) {
