@@ -23,6 +23,7 @@ public class MainView extends JFrame {
         JPanel navigationPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     
         // Buttons for each view
+        JButton dashboardButton = new JButton("Dashboard");
         JButton assignmentButton = new JButton("Assignment");
         JButton courseButton = new JButton("Course");
         JButton gradeButton = new JButton("Grade");
@@ -30,6 +31,7 @@ public class MainView extends JFrame {
         JButton quizButton = new JButton("Quiz");
     
         // Add buttons to the navigation panel
+        navigationPanel.add(dashboardButton);
         navigationPanel.add(assignmentButton);
         navigationPanel.add(courseButton);
         navigationPanel.add(gradeButton);
@@ -37,6 +39,9 @@ public class MainView extends JFrame {
         navigationPanel.add(quizButton);
     
         // Instantiate and add the actual views to the cardsPanel
+        JPanel dashboardView = new DashboardView();
+        cardsPanel.add(dashboardView, "Dashboard");
+
         JPanel assignmentView = new AssignmentView(); 
         cardsPanel.add(assignmentView, "Assignment");
        
@@ -53,6 +58,7 @@ public class MainView extends JFrame {
         cardsPanel.add(quizView, "Quiz");
 
         // Action listeners for buttons to switch views
+        dashboardButton.addActionListener(e -> cardLayout.show(cardsPanel, "Dashboard"));
         assignmentButton.addActionListener(e -> cardLayout.show(cardsPanel, "Assignment"));
         courseButton.addActionListener(e -> cardLayout.show(cardsPanel, "Course"));
         gradeButton.addActionListener(e -> cardLayout.show(cardsPanel, "Grade"));
@@ -66,7 +72,7 @@ public class MainView extends JFrame {
     
         // Frame properties
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(600, 400);
+        setSize(700, 400);
         setLocationRelativeTo(null); // Center the frame on the screen
     }
     
