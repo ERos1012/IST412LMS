@@ -6,7 +6,7 @@
 | -------------- | ---------------- | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | evr5419        | Eric Rosario     | Factory Method and Navigation | Model: Question, MultipleChoiceQuestion, TrueOrFalseQuestion<br>Controller: QuizController<br>Factory: QuestionCreator, MultipleChoiceQuestionCreator, TrueOrFalseQuestionCreator<br>View: QuizApp, MainView |
 | klh6157        | Kai Huang        | Facade and Event Calender                           | Controller: EventController, EventCalendarController, FacadeController                                                                                                                                                                                                   |
-| bqz5148        | Bryan Zhou       |                               |                                                                                                                                                                                                    |
+| bqz5148        | Bryan Zhou       | Decorator and Morphing Control                              | View: CourseView / DecoratorPattern, ClearDashboard, CourseDecorator, DashboardDecorator, MessageDecorator                                                                                                                                                                                                   |
 | agn5089        | Anish Nangare    |                               |  
 
 
